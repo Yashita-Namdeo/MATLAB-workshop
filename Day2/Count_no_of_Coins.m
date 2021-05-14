@@ -1,0 +1,12 @@
+a = imread('coins.png');
+imhist(a);
+figure;
+imshow(a);
+b = a>100;
+figure;
+imshow(b);
+b = medfilt2(b,[5 5]);
+[L,num]=bwlabel(b);
+disp(num);
+text=strcat('No of Coins=',num2str(num));
+title(text);
